@@ -1,0 +1,68 @@
+using System;
+
+
+namespace Calculate_Toll_Toll
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+        //This program is intented to generate toll bills depending on 
+the destinations from Denton. 
+        Start:
+            Console.WriteLine("Select your destination- Houston, San 
+Antonio, Corpus Christi");
+            int TollCharge = 0;
+            string DriverDestination = Console.ReadLine();
+            switch (DriverDestination.ToLower())
+            {
+                case "houston":
+                    TollCharge = 50;
+                    break;
+                case "san antonio":
+                    TollCharge = 70;
+                    break;
+                case "corpus christi":
+                    TollCharge = 80;
+                    break;
+                default:
+                    Console.WriteLine("Your destination {0} is not 
+invalid.Please enter from the values mentioned below", 
+DriverDestination);
+                    goto Start;
+
+
+            }
+
+
+            Console.WriteLine("You have chosen {0} and your bill is 
+{1}", DriverDestination, TollCharge);
+            
+            Console.WriteLine("How would you want to pay, Cash or 
+Card");
+            string DriverPayment = Console.ReadLine();
+            switch (DriverPayment.ToLower())
+            {
+                case "card":
+                    Console.WriteLine("Swipe you card or else insert 
+into it if it has a chip");
+                    Console.ReadKey();
+                    break;
+                case "cash":
+                    Console.WriteLine("Please Pay {0}", TollCharge);
+                    Console.ReadKey();
+                    break;
+                default:
+                    Console.WriteLine("If you have a toll tag, Please 
+wait till the toll scan is complete and proceed");
+                    Console.ReadKey();
+                        
+                           break;
+                    }
+            }
+        }
+    }
+
+
+
